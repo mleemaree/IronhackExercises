@@ -8,6 +8,7 @@ class Chess_Piece
 	end
 end
 
+
 class Pawn < Chess_Piece
 	def initialize(init_posi = [1,1])
 		@init_posi = init_posi
@@ -23,6 +24,7 @@ class Pawn < Chess_Piece
 		puts "Your pawn is now at: #{@init_posi}"
 	end
 end
+
 
 class Rook < Chess_Piece
 	def initialize(init_posi = [0,0])
@@ -47,6 +49,7 @@ class Rook < Chess_Piece
 	end
 end
 
+
 class Bishop < Chess_Piece
 	def initialize(init_posi = [0,2])
 		@init_posi = init_posi
@@ -69,6 +72,7 @@ class Bishop < Chess_Piece
 		end
 	end
 end
+
 
 class Knight < Chess_Piece
 	def initialize(init_posi = [0,1])
@@ -93,6 +97,7 @@ class Knight < Chess_Piece
 	end
 	
 end
+
 
 class Queen < Chess_Piece
 	def initialize(init_posi = [0,5])
@@ -121,6 +126,7 @@ class Queen < Chess_Piece
 		end
 	end
 end
+
 
 class King < Chess_Piece
 	def initialize(init_posi = [0,4])

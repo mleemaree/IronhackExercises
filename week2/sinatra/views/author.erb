@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+   	<ul>
+   		<p>Hello <%= @username %></p>
+   		<% @ingredients.each do |ingr| %>
+   			<li><%= ingr %></li>
+   		<% end %>
+   		<img src="/duck.png" alt="duck">
+   	</ul>
+  </body>
+</html>
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div id="im">
+	<h1 class="title">Shopping List</h1>
+	<form action="/item" method="POST" id="username_form">
+		<label for="item">ADD ITEM:</label>
+		<input type="text" id="item" name="item" autocomplete="off">
+		<input id="button" type="submit">
+	</form>
+</div>
+<div id="un">
+	<ul class="list">
+	<% @shopping_list.each_with_index do |v,i| %>
+		<li><%= "#{i+1}. #{v}" %></li>
+	<% end %>
+	</ul>
+</div>
+
+
+
+</body>
+</html>
