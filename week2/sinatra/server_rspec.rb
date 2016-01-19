@@ -25,7 +25,7 @@ RSpec.describe Task do
 			expect(@task.update_content!("HERRO")).to eq("HERRO")
 		end
 
-	end
+	 end
 
 
 
@@ -41,7 +41,6 @@ RSpec.describe Task do
 			expect(remove.delete_task(5)).to eq([])
 		end
 
-		#fix me
 		it "should find task by id #" do
 			find = @list
 			brush = @task
@@ -50,12 +49,14 @@ RSpec.describe Task do
 			expect(find.tasks[0].id).to eq(6)
 		end
 
-		# it "sorts list by created date" do
-		# 	sort = @list
-		# 	sort.add_task("Brush")
-		# 	sort.add_task("Walk")
-
-		# end
+		it "sorts list by created date" do
+			sort = @list
+			walk = Task.new("walk")
+			brush = Task.new("brush")
+			sort.add_task(walk)
+			sort.add_task(brush)
+			expect(sort.tasks[0].id).to eq(8)
+		end
 
 		it "should initialize a user in new list" do
 			expect(@list.create_user).to eq("josh" )
