@@ -1,5 +1,7 @@
 require "sinatra"
 require "sinatra/reloader"
+require "./models/task.rb"
+require "./models/todolist.rb"
 
 class Task
     attr_reader :content, :id

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ADD | Online Calculator</title>
+	<link rel="stylesheet" href="/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Butterfly+Kids' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="container">
+	<div class="content-container">
+		<div class="header-container">
+			<h1 class="logo">ADDITION</h1>
+			<h4>Put a number in each!</h4>
+		</div>
+		<div class="calc-wrapper">
+			<div class="form-container">
+				<form id="add" action="/adding" method="POST">
+					<div class="plus-wrapper">
+						<span id="plus">+</span>
+					</div>
+					<div class="first inputs">
+						<label for="first-num">First Number: </label>
+						<input type="number" id="fnum" name="fnum">
+					</div>
+					<div class="second inputs">
+						<label for="second-num">Second Number: </label>
+						<input type="number" id="snum" name="snum">
+					</div>
+					<div class="equal-wrapper">
+						<input type="submit" id="submit" value="=">
+					</div>
+				</form>
+
+				<div id="sum">
+					<span><%= @string %></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+body{
+	background:#FFFEFF;
+	font: 40px "Butterfly Kids";
+}
+
+.container{
+	background:#9FB0FF;
+	padding:5%;
+	height:100vh;
+}
+
+.content-container{
+	background:#FFFEFF;
+}
+
+.header-container{
+	text-align: center;
+}
+
+.inputs{
+	display:inline-block;
+}
+
+.first{
+	float:left;
+	padding-left: 15%;
+}
+
+.second{
+	float:right;
+	padding-right:15%;
+}
+
+.plus-wrapper, .equal-wrapper, #sum{
+	text-align: center;
+	clear:both;
+}
+
+#sum{
+	font:80px "Butterfly Kids";
+}
