@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Todo List</title>
+	<link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 heading">
+				<h1 class="logo">Welcome to the ToDo List <span class="glyphicon glyphicon-heart"></span></h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 new-task">
+				<a href="/new_task"><span id="add-task-text">Let's add a new task!</span></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 tasks-wrapper">
+				<div class="tasks-container">
+					<ol class="tasks">
+						<% session[:list].tasks.each do |t| %>
+							 <li>
+								<% if t.complete? == true %>
+									<div class="cfrm-cont">
+										<form action="/complete" method="POST">
+											<span class="tcon-c"><%= t.content %></span>
+											<span class="glyphicon glyphicon-ok"></span>
+										</form>
+									</div>
+									<div class="dfrm-cont">
+										<form class="delete" action="/delete"method="POST">
+											<button value="<%= t.id %>" name="sid" type="submit">
+												<span class="glyphicon glyphicon-remove"></span>
+											</button>
+										</form>
+									</div>
+								<% else %>
+									<div class="cfrm-cont">
+										<form class="complete" action="/complete" method="POST">
+											<button value="<%= t.id %>" name="sid" type="submit">
+												<span class="tcon">
+													<%= t.content %>
+												</span>
+											</button>
+										</form>
+									</div>
+									<div class="dfrm-cont">
+										<form class="delete" action="/delete" method="POST">
+											<button value="<%= t.id %>" name="sid" type="submit">
+												<span class="glyphicon glyphicon-remove"></span>
+											</button>
+										</form>
+									</div>
+								<% end %>
+							 </li>
+						<% end %>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>	<!--container end -->
+</body>
+</html>

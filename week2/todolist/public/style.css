@@ -1,0 +1,71 @@
+body{
+	font:50px "amatic sc" !important;
+	background-color: #FFAE95 !important;
+}
+
+.heading, .new-task{
+	text-align:center;
+}
+
+.head{
+	text-align:left;
+}
+
+h1{
+	font-size:100px;
+}
+
+.task-logo{
+	padding-left:3%;
+}
+
+.container{
+	background:#FAFCFF;
+	margin:2% auto;
+	padding: 2% 0;
+	min-height:90vh;
+}
+
+.tasks-wrapper{
+	padding:0 5%;
+}
+
+form, .dfrm-cont, .cfrm-cont{
+	display:inline-block;
+}
+
+.dfrm-cont{
+	float:right;
+}
+
+.tasks li{
+	padding:1% 0;
+}
+
+#new-task:focus{
+	outline:none;
+}
+
+#new-task{
+	border:none;
+	background:#FAFCFF;
+}
+
+button, .submit{
+	border:none;
+	background:none;
+}
+
+.tcon{
+	border:none;
+	background:none;
+	color:red;
+}
+
+.tcon-c{
+	color:green;
+}
+
+.glyphicon-ok{
+	color:green;
+}
