@@ -1,10 +1,23 @@
 body{
-	font:50px "amatic sc" !important;
-	background-color: #FFAE95 !important;
+	font:40px "montserrat" !important;
+	background-color: #C3DDC8 !important;
 }
 
-.heading, .new-task{
+a{
+	text-decoration:none !important;
+}
+
+.row{
+	margin-right:0;
+	margin-left:0;
+}
+
+.heading, .new-task, .username{
 	text-align:center;
+}
+
+.heading{
+	padding-bottom: 25px;
 }
 
 .head{
@@ -12,11 +25,13 @@ body{
 }
 
 h1{
-	font-size:100px;
+	font-size:70px;
 }
 
 .task-logo{
 	padding-left:3%;
+	padding-bottom: 3%;
+	font-size: 20px;
 }
 
 .container{
@@ -27,7 +42,8 @@ h1{
 }
 
 .tasks-wrapper{
-	padding:0 5%;
+	padding:2% 5%;
+	font-size: 30px;
 }
 
 form, .dfrm-cont, .cfrm-cont{
@@ -42,30 +58,55 @@ form, .dfrm-cont, .cfrm-cont{
 	padding:1% 0;
 }
 
-#new-task:focus{
+#new-task:focus, #username:focus{
 	outline:none;
 }
 
-#new-task{
+#new-task, #username{
 	border:none;
 	background:#FAFCFF;
+	width:95%;
 }
 
-button, .submit{
+.nt-l{
+	padding-bottom:2%;
+	white-space:nowrap;
+}
+
+#add-task-text{
+	font-size:35px;
+	color:#FFA31F;
+	 -webkit-transition-duration: 500ms; /* Safari */
+    transition-duration: 500ms;
+}
+
+#add-task-text:hover{
+	 -webkit-transition-duration: 500ms; /* Safari */
+    transition-duration: 500ms;
+    color:#CEF0A8;
+    text-shadow: 1px 0 #9A9661;
+}
+
+button, .submit, #user-sub{
 	border:none;
 	background:none;
+}
+
+.submit{
+	font-size:33px;
 }
 
 .tcon{
 	border:none;
 	background:none;
-	color:red;
+	color:#F92E73;
 }
 
 .tcon-c{
-	color:green;
+	color:#0A5329;
 }
 
 .glyphicon-ok{
-	color:green;
+	color:#0A5329;
+	padding-left:30px;
 }

@@ -15,7 +15,7 @@ class TodoList
     end
 
     def find_task_by(id_num)
-       @tasks.map{|t| id_num == t.id ? t : nil}
+       @tasks.find{|t| t.id == id_num}
     end
 
     def sort

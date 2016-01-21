@@ -1,5 +1,5 @@
 require "rspec"
-require "../server"
+require "./server"
 require "rack/test"
 
 RSpec.describe Task do

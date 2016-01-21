@@ -3,18 +3,29 @@ require "sinatra/reloader" if development?
 require "./lib/task"
 require "./lib/todolist"
 require "pry"
+require "guard"
+
 
 enable :sessions
 
 
 get "/" do
+	if session[:user] != nil 
+	 redirect "/tasks"
+	else
+	end
 	erb :index
 end
 
-get "/session-data" do
-	@text = session[:data]
-	erb :index
+post "/create_user" do
+	session[:user] = params[:user].capitalize!
+	redirect "/tasks"
 end
+
+# get "/session-data" do
+# 	@text = session[:data]
+# 	erb :index
+# end
 
 # get "/:text" do
 # 	session[:anything] = params[:text]
@@ -22,8 +33,12 @@ end
 # end
 
 get "/tasks" do
+	if session[:user] == nil
+		redirect "/"
+	end
+	
 	if session[:true] != true 
-		session[:list] = TodoList.new("Antti")
+		session[:list] = TodoList.new(session[:user])
 	else
 		session[:list] 
 	end
@@ -43,7 +58,7 @@ post "/create_task" do
 end
 
 post "/complete" do
-	session[:task].completed!
+	session[:list].find_task_by(params[:sid].to_i).completed!
 	redirect "/tasks"
 end
 
