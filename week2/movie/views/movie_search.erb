@@ -1,0 +1,48 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Movie Search</title>
+	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
+	<script type="text/javascript" href="./bower_components/bootstrap/dist/js/jquery.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="./stylesheets/screen.css">
+</head>
+<body>
+<div class="container init">
+	<div class="form-search-container">
+		<form id="search" action="/search" method="POST">
+			<div class="row s-w">
+				<div class="col-xs-12 col-sm-4 col-md-2 wat-wrapper">
+					<label for="si"><h1>Wat?</h1></label>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-6 input-wrapper">
+					<input type="text" id="si" name="si" autofocus autocomplete="off">
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-4 submit-wrapper">
+					<button type="submit" id="ss">
+						<span class="spin">srrrrch</span>
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+	
+	<div class="poster-container">
+ 	<% if session[:true] == true %>
+		<% session[:movie_list].each do |m|  %>
+			<img src=<% m.poster %> alt=<%m.title%>>
+		<% end %>
+	<% end %> 
+	</div>
+
+
+
+
+
+
+</body>
+<script type="text/javascript" href="./bower_components/jquery/dist/jquery.min.js"></script>
+</html>

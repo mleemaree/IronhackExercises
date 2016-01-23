@@ -1,0 +1,15 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div class="poster-container">
+ 	<% if session[:true] == true %>
+		<% session[:movie_list].each do |m|  %>
+			<img src=<% m.poster %> alt=<%m.title%>>
+		<% end %>
+	<% end %> 
+	</div>
+</body>
+</html>
