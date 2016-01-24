@@ -46,11 +46,11 @@
 			</div>
 			<div class="grid">
 				<% session[:movie_list].each do |m|  %>
-				<div class="grid-item">
-					<% if m[1] != nil%>
-						<img src="http://image.tmdb.org/t/p/w342/<%= m[1] %>" alt=<%= m[0]%>>
-					<% end %>
-				</div>
+					<div class="grid-item">
+						<% if m[1] != nil%>
+							<img src="http://image.tmdb.org/t/p/w342/<%= m[1] %>" alt=<%= m[0]%>>
+						<% end %>
+					</div>
 				<% end %>
 			</div>				
 		</div>

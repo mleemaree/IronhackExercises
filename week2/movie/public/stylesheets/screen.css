@@ -100,6 +100,7 @@ body {
 
 .loading{
   display:block !important;
+  min-height:100vh;
 }
 
 #fountainTextG{
