@@ -31,14 +31,28 @@
 
 <div class="container">
 	<% if session[:movie_list] != [] %>	
-		<div class="poster-container grid">
-			<% session[:movie_list].each do |m|  %>
-			<div class="grid-item">
-				<% if m[1] != nil%>
-					<img src="http://image.tmdb.org/t/p/original/<%= m[1] %>" alt=<%= m[0]%>>
-				<% end %>
+		<div class="poster-container">
+			<div id="loader">
+				<div id="fountainTextG">
+					<div id="fountainTextG_1" class="fountainTextG">p</div>
+					<div id="fountainTextG_2" class="fountainTextG">e</div>
+					<div id="fountainTextG_3" class="fountainTextG">e</div>
+					<div id="fountainTextG_4" class="fountainTextG">p</div>
+					<div id="fountainTextG_5" class="fountainTextG">i</div>
+					<div id="fountainTextG_6" class="fountainTextG">n</div>
+					<div id="fountainTextG_7" class="fountainTextG">.</div>
+					<div id="fountainTextG_8" class="fountainTextG">.</div>
+				</div>
 			</div>
-			<% end %>
+			<div class="grid">
+				<% session[:movie_list].each do |m|  %>
+				<div class="grid-item">
+					<% if m[1] != nil%>
+						<img src="http://image.tmdb.org/t/p/w342/<%= m[1] %>" alt=<%= m[0]%>>
+					<% end %>
+				</div>
+				<% end %>
+			</div>				
 		</div>
 	<% end %>
 </div>
@@ -51,5 +65,6 @@
 </body>
 <script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="./bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="./bower_components/imagesloaded/imagesloaded.pkgd.min.js"></script>
 <script type="text/javascript" src="./js/script.js"></script>
 </html>

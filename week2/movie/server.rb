@@ -17,7 +17,6 @@ get "/" do
 	session[:link] = session[:base] + session[:size][2]
 	else
 		session[:movie_list]
-		session[:hello]
 	end
 	erb :movie_search
 end
@@ -28,13 +27,11 @@ post "/search" do
 	session[:true] = true
 	search = Tmdb::Search.new.resource('movie').query(params[:si])
 	searched = search.fetch.to_enum
-	while session[:movie_list].length < 9
-		searched.each{|m| session[:movie_list] << [m["title"], m["poster_path"]]}
-		#session[:movie_list] << searched
-		#session[:movie_list].delete_if{|v| v["poster_path"] == ""}
+	searched.each do |m|
+		if session[:movie_list].length < 9 && m["poster_path"] != nil
+			session[:movie_list] << [m["title"], m["poster_path"], m["budget"]]
+		end
 	end
-	# session[:movie_list]
-	session[:hello] = "hello"
 	redirect "/"
 end
 
