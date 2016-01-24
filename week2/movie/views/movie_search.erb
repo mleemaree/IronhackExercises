@@ -4,7 +4,8 @@
 	<title>Movie Search</title>
 	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap-theme.css">
 	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
-	<script type="text/javascript" src="./bower_components/bootstrap/dist/js/jquery.min.js"></script>
+	<script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="./stylesheets/screen.css">
 </head>
@@ -46,11 +47,15 @@
 			</div>
 			<div class="grid">
 				<% session[:movie_list].each do |m|  %>
-					<div class="grid-item">
-						<% if m[1] != nil%>
-							<img src="http://image.tmdb.org/t/p/w342/<%= m[1] %>" alt=<%= m[0]%>>
-						<% end %>
-					</div>
+					<a href="#<%= m[0].gsub(/[^a-zA-Z]/, "").downcase %>" data-toggle="modal">
+						<div class="grid-item">
+							<% if m[1] != nil%>
+								<img src="http://image.tmdb.org/t/p/w342/<%= m[1] %>" alt=<%= m[0]%>>
+							<% end %>
+							<div class="modal" id="<%= m[0].gsub(/[^a-zA-Z]/, "").downcase %>" aria-labelledby="<%= m[0].gsub(/[^a-zA-Z]/, "").downcase %>"  tabindex="-1" aria-hidden="true" role="dialog"><div class="modal-dialog modal-sm"><%= m[0] %></div>
+							</div>
+						</div>
+					</a>
 				<% end %>
 			</div>				
 		</div>
@@ -63,7 +68,6 @@
 
 
 </body>
-<script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="./bower_components/masonry/dist/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="./bower_components/imagesloaded/imagesloaded.pkgd.min.js"></script>
 <script type="text/javascript" src="./js/script.js"></script>

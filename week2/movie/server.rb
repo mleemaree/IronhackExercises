@@ -29,7 +29,7 @@ post "/search" do
 	searched = search.fetch.to_enum
 	searched.each do |m|
 		if session[:movie_list].length < 9 && m["poster_path"] != nil
-			session[:movie_list] << [m["title"], m["poster_path"], m["popularity"], m["release_date"]]
+			session[:movie_list] << [m["title"], m["poster_path"], m["popularity"]]
 		end
 	end
 	redirect "/"

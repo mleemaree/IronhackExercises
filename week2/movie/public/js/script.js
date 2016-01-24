@@ -4,23 +4,21 @@
 	$('#loader').addClass("loading");
 
 jQuery(window).on('load', function(){
-		$(document).ready(function(){
+	$(document).ready(function(){
+		var $grid = $('.grid').masonry({
+		  columnWidth: 350,
+		  gutter: 20,
+		  isAnimated: true,
+		  fitWidth:true
+		});
 
-			var $grid = $('.grid').masonry({
-			  columnWidth: 350,
-			  gutter: 20,
-			  isAnimated: true,
-			  fitWidth:true
-			});
+		$grid.masonry('layout');
 
-			$grid.masonry('layout');
+		
+		});
+		$('.poster-container').imagesLoaded().done(function(){
 
-			
-			});
-	$('.poster-container').imagesLoaded().done(function(){
-
-	$('#loader').removeClass("loading");
-
+		$('#loader').removeClass("loading");
 	});
 
 });

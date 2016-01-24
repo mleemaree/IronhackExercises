@@ -30,7 +30,7 @@ body {
   padding-left: 5px;
 }
 /* line 32, ../sass/screen.scss */
-#si:focus, #ss:focus {
+#si:focus, #ss:focus, a:focus {
   outline: none;
 }
 
@@ -263,4 +263,14 @@ body {
 
 .poster-container{
   margin-bottom:50px;
+}
+
+.modal-dialog{
+    margin-top: 100px;
+    background: #FFFCF9;
+    font-size: 50px;
+    height: 500px;
+    width: 500px;
+    line-height: 5em;
+    border: 20px solid #020202;
 }
