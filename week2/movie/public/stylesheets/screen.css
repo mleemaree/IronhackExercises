@@ -35,7 +35,7 @@ body {
 
 /* line 37, ../sass/screen.scss */
 #ss {
-  background: #BF78A4;
+  background: #FF7A68;
   color: #FFFFEF;
   height: 60px;
   width: 80%;
@@ -74,7 +74,7 @@ body {
 
 .grid-item{
   margin-bottom:20px;
-  width:300px;
+  width:340px;
   height:auto;
 }
 
@@ -85,4 +85,6 @@ body {
 
 .grid-item img{
   width:300px;
+  border:15px solid #020202;
+  padding:5px;
 }
