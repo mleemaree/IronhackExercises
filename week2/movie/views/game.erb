@@ -4,12 +4,13 @@
 	<title>Document</title>
 </head>
 <body>
+
 	<div class="poster-container">
- 	<% if session[:true] == true %>
+		<% binding.pry %>
 		<% session[:movie_list].each do |m|  %>
-			<img src=<% m.poster %> alt=<%m.title%>>
+			<img src=<%= m["poster_path"] %> alt=<%m["title"]%>>
 		<% end %>
-	<% end %> 
 	</div>
+	
 </body>
 </html>

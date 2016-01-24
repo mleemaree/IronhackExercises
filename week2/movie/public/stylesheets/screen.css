@@ -60,3 +60,29 @@ body {
   position: relative;
   top: 2px;
 }
+
+.grid{
+  text-align: center;
+  margin:0 auto;
+}
+
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-item{
+  margin-bottom:20px;
+  width:300px;
+  height:auto;
+}
+
+.grid-item--gigante {
+  width: 600px;
+  height: auto;
+}
+
+.grid-item img{
+  width:300px;
+}

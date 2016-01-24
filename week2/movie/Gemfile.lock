@@ -20,18 +20,18 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    imdb (0.8.2)
-      nokogiri (= 1.6.2.1)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
+    json (1.8.3)
     listen (3.0.5)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
     lumberjack (1.0.10)
     method_source (0.8.2)
-    mini_portile (0.6.0)
     multi_json (1.11.2)
+    multi_xml (0.5.5)
     nenv (0.2.0)
-    nokogiri (1.6.2.1)
-      mini_portile (= 0.6.0)
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
@@ -75,6 +75,8 @@ GEM
     sinatra-reloader (1.0)
       sinatra-contrib
     slop (3.6.0)
+    themoviedb (0.1.0)
+      httparty
     thor (0.19.1)
     tilt (2.0.2)
 
@@ -84,11 +86,11 @@ PLATFORMS
 DEPENDENCIES
   guard
   guard-rspec
-  imdb
   rack
   rack-test
   sinatra
   sinatra-reloader
+  themoviedb
 
 BUNDLED WITH
    1.11.2

@@ -40,7 +40,7 @@ get "/tasks" do
 	if session[:true] != true 
 		session[:list] = TodoList.new(session[:user])
 	else
-		session[:list] 
+		session[:list]
 	end
 	erb :task_index
 end

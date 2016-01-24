@@ -4,7 +4,7 @@
 	<title>Movie Search</title>
 	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap-theme.css">
 	<link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
-	<script type="text/javascript" href="./bower_components/bootstrap/dist/js/jquery.min.js"></script>
+	<script type="text/javascript" src="./bower_components/bootstrap/dist/js/jquery.min.js"></script>
 	<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="./stylesheets/screen.css">
 </head>
@@ -29,14 +29,19 @@
 	</div>
 </div>
 
-	
-	<div class="poster-container">
- 	<% if session[:true] == true %>
-		<% session[:movie_list].each do |m|  %>
-			<img src=<% m.poster %> alt=<%m.title%>>
-		<% end %>
-	<% end %> 
-	</div>
+<div class="container">
+	<% if session[:movie_list] != [] %>	
+		<div class="poster-container grid">
+			<% session[:movie_list].each do |m|  %>
+			<div class="grid-item">
+				<% if m[1] != nil%>
+					<img src="http://image.tmdb.org/t/p/original/<%= m[1] %>" alt=<%= m[0]%>>
+				<% end %>
+			</div>
+			<% end %>
+		</div>
+	<% end %>
+</div>
 
 
 
@@ -44,5 +49,7 @@
 
 
 </body>
-<script type="text/javascript" href="./bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="./bower_components/masonry/dist/masonry.pkgd.min.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
 </html>
