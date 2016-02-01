@@ -1,0 +1,27 @@
+
+<style>
+	.contact-info{
+		display:none;
+	}
+</style>
+<ol>
+	<% @contacts.each do |contact| %>
+		<li>
+			<%= link_to contact.name, "show/" + contact.id.to_s %>
+		</li>
+	<% end %>
+</ol>
+
+
+<a href="/new">Create a new Contact</a>
+
+<form action="/search" method="POST">
+	<input type="text" name="search" placeholder="search for people"/>
+	<input type="submit" value="yoww">
+	<input type="hidden" name="authenticity_token"
+      	value="<%= form_authenticity_token %>">
+</form>
+
+<script>
+
+</script>

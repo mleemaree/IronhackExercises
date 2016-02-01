@@ -1,0 +1,19 @@
+
+
+<% @contact = Contact.find(params[:id]) %>
+
+<%= @contact.name %><br>
+<%= @contact.address %><br>
+<%= @contact.phoneNumber %><br>
+<%= @contact.email %><br>
+<% if @contact.favorite != true %>
+	<form action="/fav" method="POST"><br>
+		<button type="submit" value=<%= @contact.id.to_s %> name="id">Make Favorite</button>
+		<input type="hidden" name="authenticity_token"
+      	value="<%= form_authenticity_token %>">
+	</form>
+<% else %>
+	<span>Favorite!</span><br>
+<% end %>
+
+<a href="/">Return to Contacts</a>
