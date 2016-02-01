@@ -1,5 +1,4 @@
-<% @search = Contact.where("name LIKE ?", "%#{params[:search]}%") %>
 
+<% @search = Contact.where("name LIKE ?", "%#{@searched}%")%>
 
-<%= @search %>
-hey
+<%= @search.each{|t| t.name} %>
