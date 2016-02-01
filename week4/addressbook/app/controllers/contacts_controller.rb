@@ -22,9 +22,10 @@ class ContactsController < ApplicationController
  	end
 
  	def search
- 		@searched = params[:search]
- 		# @search = Contact.where("name LIKE ?", "%#{searched}%")
- 		redirect_to("/searched/" + params[:search])
+ 		if params[:search] != nil
+	 		searched = params[:search]
+	 		@search = Contact.where("name LIKE ?", "%#{searched}%")
+	 	end
  	end
 
 

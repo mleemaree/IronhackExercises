@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   post("/search", :to => "contacts#search")
 
-  get '/searched/:search', to: 'contacts#searched'
+  get '/search/:search', to: 'contacts#search'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
