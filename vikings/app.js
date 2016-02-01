@@ -1,0 +1,1 @@
+var pitFight = require('./pit_fight.js');
