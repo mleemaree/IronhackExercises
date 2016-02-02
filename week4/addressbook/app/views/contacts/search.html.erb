@@ -1,3 +1,10 @@
 
+<ol>
+<% hey = @search.to_a %>
 
-<%= @search.each{|t| t.name} %>
+<% hey.each do |c| %>
+	<li><%= c.name %></li>
+<% end %>
+</ol>
+
+<a href="/">Back to List</a>

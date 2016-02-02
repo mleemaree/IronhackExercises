@@ -25,6 +25,7 @@ class ContactsController < ApplicationController
  		if params[:search] != nil
 	 		searched = params[:search]
 	 		@search = Contact.where("name LIKE ?", "%#{searched}%")
+	 		#redirect_to("/search/" + params[:search])
 	 	end
  	end
 
