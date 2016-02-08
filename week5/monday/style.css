@@ -1,0 +1,69 @@
+@font-face{
+	font-family:'rickandmorty';
+	src: url(./assets/rickandmorty.ttf) format('truetype');
+}
+
+body{
+	font:8em 'rickandmorty';
+	text-align:center;
+	padding-top:50px;
+	background:url("assets/rm.jpg") top center;
+	background-size:100%;
+	color:#341D15;
+}
+
+#old{
+	display:table;
+	margin:0 auto;
+}
+
+
+#old li{
+	height:250px;
+	padding-bottom:50px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+button{
+	font-size:50px !important;
+	background:#361F15;
+	color:#D2EFF7;
+	margin-bottom:50px !important;
+}
+
+button:focus{
+	outline:none !important;
+}
+
+button:active, button:hover{
+	color:#D2EFF7;
+}
+
+input{
+	margin-bottom:50px;
+}
+
+input:focus{
+	outline:none;
+}
+
+#new li{
+	display:table;
+	margin: 0 auto;
+	color:#5EB4B2;
+}
+
+.remove{
+	padding-left:50px;
+	font-size:20px;
+	display:table-cell;
+	vertical-align: middle;
+}
+
+#writer{
+	height:200px;
+	width:500px;
+	margin: 0 auto;
+	color:#5EB4B2;
+}
