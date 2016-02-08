@@ -3,7 +3,7 @@ class ContactsController < ApplicationController
 		@contacts = Contact.order(name: :asc)
 	end
 
-	def create
+	def create_contact
     	# Create new Contact from params[:contact]
 	    contact = Contact.new(
 	      :name => params[:contact][:name],
@@ -14,6 +14,24 @@ class ContactsController < ApplicationController
 	    # Render contact's attributes
 
 	    redirect_to("/")
+ 	end
+
+ 	def show
+ 		@photo = Photo.order('created_at')
+ 	end
+
+ 	# def new
+ 	# 	@photo = Photo.new
+ 	# end
+
+ 	def create_photo
+ 		@photo = Photo.new(photo_params)
+ 		if @photo.save
+ 			flash[:success] = "Added!"
+ 			redirect_to root_path
+ 		else
+ 			render 'new'
+ 		end
  	end
 
  	def fav
@@ -29,5 +47,10 @@ class ContactsController < ApplicationController
 	 	end
  	end
 
+ 	private
+
+ 	def photo_params
+ 		params.require(:photo).permit(:image, :photo)
+ 	end
 
 end

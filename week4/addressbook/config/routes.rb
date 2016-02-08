@@ -5,15 +5,19 @@ Rails.application.routes.draw do
 
   get '/new' => 'contacts#new'
 
-  post("/contacts", :to => "contacts#create")
+  post("/contacts", :to => "contacts#create_contact")
 
   get '/show/:id', to: 'contacts#show'
 
   post("/fav", :to => "contacts#fav")
 
-  post("/search", :to => "contacts#search")
+  post("/search/:search", :to => "contacts#search")
 
-  get '/search/:search', to: 'contacts#search'
+  # get '/search/:search', to: 'contacts#search'
+
+  resources :photos, only: [:new, :create, :index, :destroy]
+
+  root to: 'contacts#show'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
