@@ -8,22 +8,20 @@ $(function(){
 		"Yeah, just don't do it.",
 		"Don't even trip, dawg.",
 		"Earth scientist Jerry Smith has made an amazing discovery!",
-		"Sometimes science is more art then science. Lot of people don't get that."
+		"Sometimes science is more art then science. Lots of people don't get that."
 	];
 
 	var newp = [];
 
 
 	var line = function(){
-		var phrase_index = Math.floor(Math.random() * phrases.length);
 		var indexes = [];
-		indexes.push(phrase_index);
-		indexes.filter(
-         function(a){if (!this[a]) {this[a] = 1; return a;}},
-         {}
-        );
+		for(var i = 0; i<5; i++){
+			var phrase_index = Math.floor(Math.random() * phrases.length);
+			indexes.includes(phrase_index) ? i-- : indexes.push(phrase_index);
+		}
         console.log(indexes);
-		$('#old').append('<li>' + phrases[indexes[0]] + '</li>');
+		$('#old').append('<li>' + phrases[indexes[phrase_index]] + '</li>');
 	}
 
 	line();
@@ -39,7 +37,7 @@ $(function(){
 	    	var values = $('#input').val();
 	    	newp.push(values);
 	    	new_phrases();
-	    	$('#input').attr('value', "");
+	    	$('#input').prop('value', "");
 	    	$('#writer').empty();
 	    	return false;
 	     }
