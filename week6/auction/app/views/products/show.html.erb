@@ -1,0 +1,46 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Product Single View</title>
+</head>
+<body>
+	<h2><%= @product.title %></h2>
+	<%= link_to 'Delete', product_path(@product.id), :method => :delete %>
+
+	<ul class="bids">
+		<% @product.bids.each do |bid| %>
+		<li>
+			<div class="bid-info">
+				<span><%= bid.amount  %> - <%= Customer.find_by(id: bid.customer_id).name %></span>
+			</div>
+		</li>
+		<% end %>
+	</ul>
+
+	<%= link_to "Back to Products", products_path  %>
+	
+	<%= form_for :bid, url: bids_path do |f| %>
+	Amount: <%= f.text_field :amount  %>
+	<%= f.hidden_field(:customer_id, :value => current_user.customer_id) %>
+	<%= f.hidden_field(:product_id, :value => @product.id) %>
+
+	<%= f.submit  %>
+	<% end %>
+
+
+	<h2>Reviews</h2>
+
+	<%= form_for :review, url: reviews_path do |f| %>
+	Amount: <%= f.text_area :description  %>
+	<%= f.hidden_field(:customer_id, :value => current_user.id) %>
+	<%= f.hidden_field(:product_id, :value => @product.id) %>
+
+	<%= f.submit  %>
+	<% end %>
+	<% @product.reviews.each do |review| %>
+	<ul class="reviews">
+		<li><%= review.description  %> - <%= @customer.name  %></li>
+	</ul>
+	<% end %>
+</body>
+</html>

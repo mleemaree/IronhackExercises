@@ -1,0 +1,21 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Customer Show</title>
+</head>
+<body>
+	<% if current_user != nil %>
+		<% if @customer != nil %>
+			<h1 class="name"><%= @customer.name  %></h1>
+		<% end %>
+		<span><%= link_to "Delete", customer_path(@customer.id) , :method => :delete  %></span>
+	<% end %>
+
+	<h2>Products Bid On:</h2>
+	<ul>
+	<% @customer.products.each do |product| %>
+		<li><%= product.title  %></li>
+	<% end %>
+	</ul>
+</body>
+</html>
